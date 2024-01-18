@@ -5,7 +5,7 @@ class Menu
     static void Main()
     {
         bool exitProgram = false;
-        ShowLoader("Loading the game...", 5);
+        ShowLoader("Loading the game...", 1);
 
         do
         {
@@ -114,8 +114,9 @@ class Menu
 
     static void StartCustomGame()
     {
+        Console.Clear();
         Console.WriteLine("Starting Custom Game...");
-        string game_result = game.Run(new GameState(), "custom");
+        game.Run(new GameState(), "custom");
     }
 
     static void ShowLeaderboard()

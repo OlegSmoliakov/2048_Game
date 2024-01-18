@@ -87,14 +87,21 @@ class Game
     {
         Console.Write("Enter the size of the board (e.g., 4 for 4x4): ");
         int size = int.Parse(Console.ReadLine());
-        do
+        while (size < 2 || size > 10)
         {
-            Console.WriteLine("Invalid choice. Please enter a valid option.");
-        } while (size < 0 && size > 10);
+            Console.Write("\rInvalid choice. Please enter a valid option. (between 2 and 10): ");
+            size = int.Parse(Console.ReadLine());
+        }
 
 
         Console.Write("Enter the game target (e.g. 2048): ");
         int target = int.Parse(Console.ReadLine());
+        while (target < 1)
+        {
+            Console.Write("\rInvalid choice. Please enter a valid option.: ");
+            size = int.Parse(Console.ReadLine());
+        }
+
 
         return (size, target);
     }
